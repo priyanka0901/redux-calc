@@ -20,7 +20,7 @@ const mapDispatchToProps = {
 const mapStateToProps = (state) => ({
   counter : state.counter
 })
-
+ 
 /*  Note: mapStateToProps is where you should use `reselect` to create selectors, ie:
 
     import { createSelector } from 'reselect'
