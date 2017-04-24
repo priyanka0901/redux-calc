@@ -10,7 +10,6 @@ class Calculator  extends React.Component {
 
     render() {
         const { calcState, addElem, clear, equal } = this.props;
-        console.log(this.props);
         return (
              <div className="App">
                <div className="value-container">
