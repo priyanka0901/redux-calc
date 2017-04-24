@@ -1,34 +1,41 @@
 //actions
-const calcState = {
+export const calcState = {
     calValue : 0,
-    calBtns : ["1", "2", "3", "C ","4", "5", "6", "=", "7", "8", "9", ".", "+", "0", "-", "*", "/"]
-}
-export const actions = {
-    calcState
+    calBtns :  [ "1", "2", "3", "C", "4", "5", "6", "=", "7", "8", "9", ".", "+", "0", "-", "*", "/" ]
 }
 
 // reducer
 const calcReducer = (state = {calcState}, action ) =>{
-    switch(action.type) {
+
+    const calcState = Object.assign({}, state.calcState);
+    switch(action.type) { 
+
         case 'ADD_ELEM':
+        const newCalcState = Object.assign({}, state.calcState, {calValue: calcState.calValue == 0? action.payload : calcState.calValue + action.payload});
         return {
             ...state,
-            calValue:calcState.calValue == 0? action.text : calcState.calValue + action.text
-        }
+            calcState: newCalcState
+        } 
+
         case 'CLEAR':
+        const newCalcClear = Object.assign({}, state.calcState, {calValue:0})
         return {
             ...state,
-            calValue: 0
+            calcState: newCalcClear
         }
+
         case 'EQUAL':
-        return {
+        const newCalcEqual = Object.assign({}, state.calcState, {calValue:eval(action.payload)})
+        return{
             ...state,
-            calValue: eval(action.calValue)
+            calcState: newCalcEqual
         }
+
         default:
         return state;
     }
 }
+
 
 export default calcReducer;
 

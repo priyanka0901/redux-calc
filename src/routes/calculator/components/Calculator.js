@@ -24,11 +24,11 @@ class Calculator  extends React.Component {
                             )
                            }else if(item == "="){
                                 return(
-                                <button onClick={ equal.bind(this, calcState.calValue) } key={key}>{item}</button>
+                                <button onClick={equal.bind(this, calcState.calValue) } key={key}>{item}</button>
                              )
                            } else {
                              return(
-                               <button onClick={ addElem.bind(this, item) } key={key}>{item}</button>
+                               <button onClick={addElem.bind(this, item) } key={key}>{item}</button>
                              )
                            }
                          })}

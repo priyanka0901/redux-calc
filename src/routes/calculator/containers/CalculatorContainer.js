@@ -1,5 +1,5 @@
 import {connect} from 'react-redux';
-import {calculatorReducer} from '../modules/calculator';
+import {calculatorReducer,calcState} from '../modules/calculator';
 import Calculator from '../components/Calculator';
 
 const mapStateToProps = (state) =>{
@@ -11,7 +11,7 @@ const mapDispatchToProps = (dispatch) => {
         addElem: (text) =>{
             dispatch({
                 type: 'ADD_ELEM',
-                text
+                payload: text
             })
         },
         clear: () =>{
@@ -22,7 +22,7 @@ const mapDispatchToProps = (dispatch) => {
         equal: (calValue) => {
             dispatch({
                 type: 'EQUAL',
-                calValue
+                payload: calValue
             })
         }
     }
