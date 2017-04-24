@@ -1,17 +1,19 @@
 //actions
-
-export const calcState = {
+const calcState = {
     calValue : 0,
     calBtns : ["1", "2", "3", "C ","4", "5", "6", "=", "7", "8", "9", ".", "+", "0", "-", "*", "/"]
 }
+export const actions = {
+    calcState
+}
 
 // reducer
-export const calcReducer = (state = calcState, action ) =>{
-    switch(action.type){
+const calcReducer = (state = {calcState}, action ) =>{
+    switch(action.type) {
         case 'ADD_ELEM':
         return {
             ...state,
-            calValue:state.calValue == 0? action.text : state.calValue + action.text
+            calValue:calcState.calValue == 0? action.text : calcState.calValue + action.text
         }
         case 'CLEAR':
         return {
@@ -27,3 +29,6 @@ export const calcReducer = (state = calcState, action ) =>{
         return state;
     }
 }
+
+export default calcReducer;
+

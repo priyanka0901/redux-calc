@@ -14,6 +14,6 @@ export default (store) => ({
             injectReducer(store, {key: 'calculator', reducer})
             cb(null, Calculator)
 
-        },'Calculator')
+        },'calculator')
     }
 }) 
