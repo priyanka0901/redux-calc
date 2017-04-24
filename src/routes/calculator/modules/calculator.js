@@ -5,6 +5,8 @@ export const calcState = {
 }
 
 // reducer
+
+
 const calcReducer = (state = {calcState}, action ) =>{
 
     const calcState = Object.assign({}, state.calcState);
