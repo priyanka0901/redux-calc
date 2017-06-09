@@ -12,7 +12,7 @@ export function increment (value = 1) {
     type    : COUNTER_INCREMENT,
     payload : value
   }
-}
+} 
 
 /*  This is a thunk, meaning it is a function that immediately
     returns a function for lazy evaluation. It is incredibly useful for
